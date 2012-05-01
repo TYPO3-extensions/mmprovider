@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'mmprovider'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_mmprovider_selection">MM-tables selection</label>
+			<label index="tx_mmprovider_selection.title">Title</label>
+			<label index="tx_mmprovider_selection.description">Description</label>
+			<label index="tx_mmprovider_selection.source">Source table</label>
+			<label index="tx_mmprovider_selection.mm">Relation table (MM)</label>
+			<label index="tx_mmprovider_selection.target">Target table</label>
+			<label index="tx_mmprovider_selection.selection">Selection</label>
+			<label index="tx_mmprovider_selection.tablenames.I.0">None</label>
+			<label index="tx_mmprovider_selection.tablenames.I.1">Source table</label>
+			<label index="tx_mmprovider_selection.tablenames.I.2">Target table</label>
+			<label index="tx_mmprovider_selection.tablenames">Table restriction (tablenames)</label>
+			<label index="tx_mmprovider_selection.ident">Identifier (ident)</label>
+		</languageKey>
+	</data>
+</T3locallang>
