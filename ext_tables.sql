@@ -31,4 +31,4 @@ CREATE TABLE tx_mmprovider_selection (
 	PRIMARY KEY (uid),
 	KEY parent (pid),
 	KEY t3ver_oid (t3ver_oid,t3ver_wsid)
-) ENGINE=InnoDB;
+);

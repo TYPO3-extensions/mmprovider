@@ -49,12 +49,7 @@ $TCA['tx_mmprovider_selection'] = array(
 			'label' => 'LLL:EXT:mmprovider/locallang_db.xml:tx_mmprovider_selection.source',
 			'config' => array(
 				'type' => 'select',
-				'items' => array(
-					array('LLL:EXT:mmprovider/locallang_db.xml:tx_mmprovider_selection.source.I.0', '0'),
-					array('LLL:EXT:mmprovider/locallang_db.xml:tx_mmprovider_selection.source.I.1', '1'),
-					array('LLL:EXT:mmprovider/locallang_db.xml:tx_mmprovider_selection.source.I.2', '2'),
-					array('LLL:EXT:mmprovider/locallang_db.xml:tx_mmprovider_selection.source.I.3', '3'),
-				),
+				'special' => 'tables',
 				'size' => 1,
 				'maxitems' => 1,
 			)
@@ -79,12 +74,7 @@ $TCA['tx_mmprovider_selection'] = array(
 			'label' => 'LLL:EXT:mmprovider/locallang_db.xml:tx_mmprovider_selection.target',
 			'config' => array(
 				'type' => 'select',
-				'items' => array(
-					array('LLL:EXT:mmprovider/locallang_db.xml:tx_mmprovider_selection.target.I.0', '0'),
-					array('LLL:EXT:mmprovider/locallang_db.xml:tx_mmprovider_selection.target.I.1', '1'),
-					array('LLL:EXT:mmprovider/locallang_db.xml:tx_mmprovider_selection.target.I.2', '2'),
-					array('LLL:EXT:mmprovider/locallang_db.xml:tx_mmprovider_selection.target.I.3', '3'),
-				),
+				'special' => 'tables',
 				'size' => 1,
 				'maxitems' => 1,
 			)
@@ -120,10 +110,21 @@ $TCA['tx_mmprovider_selection'] = array(
 		),
 	),
 	'types' => array(
-		'0' => array('showitem' => 'hidden;;1;;1-1-1, title;;;;2-2-2, description;;;;3-3-3, source, mm, target, tablenames, ident')
+		'0' => array('showitem' => 'hidden, title;;general, --palette--;LLL:EXT:mmprovider/locallang_db.xml:tx_mmprovider_selection.palette.relations;relations, --palette--;LLL:EXT:mmprovider/locallang_db.xml:tx_mmprovider_selection.palette.restrictions;restrictions')
 	),
 	'palettes' => array(
-		'1' => array('showitem' => '')
+		'general' => array(
+			'canNotCollapse' => 1,
+			'showitem' => 'description'
+		),
+		'relations' => array(
+			'canNotCollapse' => 1,
+			'showitem' => 'source, --linebreak--, mm, --linebreak--, target, --linebreak--, selection'
+		),
+		'restrictions' => array(
+			'canNotCollapse' => 1,
+			'showitem' => 'tablenames, --linebreak--, ident'
+		)
 	)
 );
 ?>

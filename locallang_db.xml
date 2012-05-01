@@ -18,6 +18,8 @@
 			<label index="tx_mmprovider_selection.tablenames.I.2">Target table</label>
 			<label index="tx_mmprovider_selection.tablenames">Table restriction (tablenames)</label>
 			<label index="tx_mmprovider_selection.ident">Identifier (ident)</label>
+			<label index="tx_mmprovider_selection.palette.relations">MM relation</label>
+			<label index="tx_mmprovider_selection.palette.restrictions">Selection restrictions</label>
 		</languageKey>
 	</data>
 </T3locallang>
