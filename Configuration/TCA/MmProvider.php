@@ -28,7 +28,7 @@ $TCA['tx_mmprovider_selection'] = array(
 		),
 		'title' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:mmprovider/locallang_db.xml:tx_mmprovider_selection.title',
+			'label' => 'LLL:EXT:mmprovider/Resources/Private/Language/locallang_db.xml:tx_mmprovider_selection.title',
 			'config' => array(
 				'type' => 'input',
 				'size' => '30',
@@ -37,7 +37,7 @@ $TCA['tx_mmprovider_selection'] = array(
 		),
 		'description' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:mmprovider/locallang_db.xml:tx_mmprovider_selection.description',
+			'label' => 'LLL:EXT:mmprovider/Resources/Private/Language/locallang_db.xml:tx_mmprovider_selection.description',
 			'config' => array(
 				'type' => 'text',
 				'cols' => '30',
@@ -46,42 +46,39 @@ $TCA['tx_mmprovider_selection'] = array(
 		),
 		'source' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:mmprovider/locallang_db.xml:tx_mmprovider_selection.source',
+			'label' => 'LLL:EXT:mmprovider/Resources/Private/Language/locallang_db.xml:tx_mmprovider_selection.source',
 			'config' => array(
 				'type' => 'select',
 				'special' => 'tables',
 				'size' => 1,
 				'maxitems' => 1,
+				'suppress_icons' => 1
 			)
 		),
 		'mm' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:mmprovider/locallang_db.xml:tx_mmprovider_selection.mm',
+			'label' => 'LLL:EXT:mmprovider/Resources/Private/Language/locallang_db.xml:tx_mmprovider_selection.mm',
 			'config' => array(
 				'type' => 'select',
-				'items' => array(
-					array('LLL:EXT:mmprovider/locallang_db.xml:tx_mmprovider_selection.mm.I.0', '0'),
-					array('LLL:EXT:mmprovider/locallang_db.xml:tx_mmprovider_selection.mm.I.1', '1'),
-					array('LLL:EXT:mmprovider/locallang_db.xml:tx_mmprovider_selection.mm.I.2', '2'),
-					array('LLL:EXT:mmprovider/locallang_db.xml:tx_mmprovider_selection.mm.I.3', '3'),
-				),
+				'itemsProcFunc' => 'EXT:mmprovider/Classes/Utility/Tca.php:Tx_Mmprovider_Utility_Tca->listMmTables',
 				'size' => 1,
-				'maxitems' => 1,
+				'maxitems' => 1
 			)
 		),
 		'target' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:mmprovider/locallang_db.xml:tx_mmprovider_selection.target',
+			'label' => 'LLL:EXT:mmprovider/Resources/Private/Language/locallang_db.xml:tx_mmprovider_selection.target',
 			'config' => array(
 				'type' => 'select',
 				'special' => 'tables',
 				'size' => 1,
 				'maxitems' => 1,
+				'suppress_icons' => 1
 			)
 		),
 		'selection' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:mmprovider/locallang_db.xml:tx_mmprovider_selection.selection',
+			'label' => 'LLL:EXT:mmprovider/Resources/Private/Language/locallang_db.xml:tx_mmprovider_selection.selection',
 			'config' => array(
 				'type' => 'text',
 				'cols' => '30',
@@ -90,19 +87,20 @@ $TCA['tx_mmprovider_selection'] = array(
 		),
 		'tablenames' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:mmprovider/locallang_db.xml:tx_mmprovider_selection.tablenames',
+			'label' => 'LLL:EXT:mmprovider/Resources/Private/Language/locallang_db.xml:tx_mmprovider_selection.tablenames',
 			'config' => array(
 				'type' => 'radio',
 				'items' => array(
-					array('LLL:EXT:mmprovider/locallang_db.xml:tx_mmprovider_selection.tablenames.I.0', 'none'),
-					array('LLL:EXT:mmprovider/locallang_db.xml:tx_mmprovider_selection.tablenames.I.1', 'source'),
-					array('LLL:EXT:mmprovider/locallang_db.xml:tx_mmprovider_selection.tablenames.I.2', 'target'),
+					array('LLL:EXT:mmprovider/Resources/Private/Language/locallang_db.xml:tx_mmprovider_selection.tablenames.I.0', 'none'),
+					array('LLL:EXT:mmprovider/Resources/Private/Language/locallang_db.xml:tx_mmprovider_selection.tablenames.I.1', 'source'),
+					array('LLL:EXT:mmprovider/Resources/Private/Language/locallang_db.xml:tx_mmprovider_selection.tablenames.I.2', 'target'),
 				),
+				'default' => 'none'
 			)
 		),
 		'ident' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:mmprovider/locallang_db.xml:tx_mmprovider_selection.ident',
+			'label' => 'LLL:EXT:mmprovider/Resources/Private/Language/locallang_db.xml:tx_mmprovider_selection.ident',
 			'config' => array(
 				'type' => 'input',
 				'size' => '30',
@@ -110,7 +108,7 @@ $TCA['tx_mmprovider_selection'] = array(
 		),
 	),
 	'types' => array(
-		'0' => array('showitem' => 'hidden, title;;general, --palette--;LLL:EXT:mmprovider/locallang_db.xml:tx_mmprovider_selection.palette.relations;relations, --palette--;LLL:EXT:mmprovider/locallang_db.xml:tx_mmprovider_selection.palette.restrictions;restrictions')
+		'0' => array('showitem' => 'hidden, title;;general, --palette--;LLL:EXT:mmprovider/Resources/Private/Language/locallang_db.xml:tx_mmprovider_selection.palette.relations;relations, --palette--;LLL:EXT:mmprovider/Resources/Private/Language/locallang_db.xml:tx_mmprovider_selection.palette.restrictions;restrictions')
 	),
 	'palettes' => array(
 		'general' => array(

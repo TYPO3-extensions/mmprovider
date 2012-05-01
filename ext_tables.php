@@ -7,7 +7,7 @@ t3lib_extMgm::allowTableOnStandardPages('tx_mmprovider_selection');
 
 $TCA['tx_mmprovider_selection'] = array(
 	'ctrl' => array(
-		'title'     => 'LLL:EXT:mmprovider/locallang_db.xml:tx_mmprovider_selection',
+		'title'     => 'LLL:EXT:mmprovider/Resources/Private/Language/locallang_db.xml:tx_mmprovider_selection',
 		'label'     => 'title',
 		'tstamp'    => 'tstamp',
 		'crdate'    => 'crdate',
@@ -19,8 +19,8 @@ $TCA['tx_mmprovider_selection'] = array(
 		'enablecolumns' => array(
 			'disabled' => 'hidden',
 		),
-		'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY) . 'tca.php',
-		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY) . 'icon_tx_mmprovider_selection.png',
+		'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY) . 'Configuration/TCA/MmProvider.php',
+		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY) . 'Resources/Public/Images/icon_tx_mmprovider_selection.png',
 	),
 );
 ?>
