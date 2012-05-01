@@ -26,6 +26,7 @@ CREATE TABLE tx_mmprovider_selection (
 	target int(11) DEFAULT '0' NOT NULL,
 	selection text,
 	tablenames varchar(6) DEFAULT '' NOT NULL,
+	uid_local varchar(6) DEFAULT '' NOT NULL,
 	ident tinytext,
 
 	PRIMARY KEY (uid),

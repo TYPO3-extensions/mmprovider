@@ -85,6 +85,18 @@ $TCA['tx_mmprovider_selection'] = array(
 				'rows' => '5',
 			)
 		),
+		'uid_local' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:mmprovider/Resources/Private/Language/locallang_db.xml:tx_mmprovider_selection.uid_local',
+			'config' => array(
+				'type' => 'radio',
+				'items' => array(
+					array('LLL:EXT:mmprovider/Resources/Private/Language/locallang_db.xml:tx_mmprovider_selection.uid_local.I.0', 'source'),
+					array('LLL:EXT:mmprovider/Resources/Private/Language/locallang_db.xml:tx_mmprovider_selection.uid_local.I.1', 'target'),
+				),
+				'default' => 'source'
+			)
+		),
 		'tablenames' => array(
 			'exclude' => 0,
 			'label' => 'LLL:EXT:mmprovider/Resources/Private/Language/locallang_db.xml:tx_mmprovider_selection.tablenames',
@@ -117,7 +129,7 @@ $TCA['tx_mmprovider_selection'] = array(
 		),
 		'relations' => array(
 			'canNotCollapse' => 1,
-			'showitem' => 'source, --linebreak--, mm, --linebreak--, target, --linebreak--, selection'
+			'showitem' => 'source, --linebreak--, mm, --linebreak--, target, --linebreak--, selection, --linebreak--, uid_local'
 		),
 		'restrictions' => array(
 			'canNotCollapse' => 1,

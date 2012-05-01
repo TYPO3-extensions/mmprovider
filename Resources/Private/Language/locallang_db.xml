@@ -13,6 +13,9 @@
 			<label index="tx_mmprovider_selection.mm">Relation table (MM)</label>
 			<label index="tx_mmprovider_selection.target">Target table</label>
 			<label index="tx_mmprovider_selection.selection">Selection</label>
+			<label index="tx_mmprovider_selection.uid_local">Local id (uid_local)</label>
+			<label index="tx_mmprovider_selection.uid_local.I.0">Source table</label>
+			<label index="tx_mmprovider_selection.uid_local.I.1">Target table</label>
 			<label index="tx_mmprovider_selection.tablenames.I.0">None</label>
 			<label index="tx_mmprovider_selection.tablenames.I.1">Source table</label>
 			<label index="tx_mmprovider_selection.tablenames.I.2">Target table</label>
