@@ -23,4 +23,22 @@ $TCA['tx_mmprovider_selection'] = array(
 		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY) . 'Resources/Public/Images/icon_tx_mmprovider_selection.png',
 	),
 );
+
+	// Register mmprovider as a secondary Data Provider
+t3lib_div::loadTCA('tt_content');
+$TCA['tt_content']['columns']['tx_displaycontroller_provider2']['config']['allowed'] .= ',tx_mmprovider_selection';
+
+	// Add a wizard for adding a mmprovider
+$addMmProviderWizard = array(
+	'type' => 'script',
+	'title' => 'LLL:EXT:mmprovider/Resources/Private/Language/locallang_db.xml:wizards.add_mmprovider',
+	'script' => 'wizard_add.php',
+	'icon' => 'EXT:mmprovider/Resources/Public/Images/add_mmprovider_wizard.png',
+	'params' => array(
+		'table' => 'tx_mmprovider_selection',
+		'pid' => '###CURRENT_PID###',
+		'setValue' => 'append'
+	)
+);
+$TCA['tt_content']['columns']['tx_displaycontroller_provider2']['config']['wizards']['add_mmprovider'] = $addMmProviderWizard;
 ?>

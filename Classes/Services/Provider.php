@@ -120,22 +120,24 @@ class Tx_Mmprovider_Services_Provider extends tx_tesseract_providerbase {
 				}
 					// Sort all relations per table and per id of the "other" side
 				foreach ($relatedInformation as $row) {
+					$sourceId = $row[$sourceField];
+					$targetId = $row[$targetField];
 						// Get the table name and initialize some arrays, if needed
 					$table = (empty($row['tablenames'])) ? $this->providerData['target'] : $row['tablenames'];
 					if (!isset($uidsPerTable[$table])) {
 						$uidsPerTable[$table] = array();
 						$matchesPerItem[$table] = array();
 					}
-					if (!isset($tagsPerItem[$table][$targetField])) {
-						$matchesPerItem[$table][$targetField] = array();
+					if (!isset($matchesPerItem[$table][$targetId])) {
+						$matchesPerItem[$table][$targetId] = array();
 					}
-					$uidsPerTable[$table][$targetField] = $targetField;
-					$matchesPerItem[$table][$targetField][] = $sourceField;
+					$uidsPerTable[$table][$targetId] = $targetId;
+					$matchesPerItem[$table][$targetId][] = $sourceId;
 				}
 					// If the items should match all selected keys ("AND" logical operator chosen)
 					// perform some post-process filtering, because such a condition
 					// cannot be expressed simply in the SELECT query
-				if ($this->providerData['logical_operator'] == 'AND') {
+				if ($this->providerData['logical_operator'] == 'and') {
 					foreach ($matchesPerItem as $table => $tableRows) {
 						foreach ($tableRows as $uidfromTarget => $uidfromSource) {
 								// Check if all chosen keys are matched by keys found per item
@@ -256,7 +258,7 @@ class Tx_Mmprovider_Services_Provider extends tx_tesseract_providerbase {
 		} else {
 			$conditionField = 'uid_foreign';
 		}
-		$where = $conditionField . ' IN (' . implode(', ' . $keys) . ')';
+		$where = $conditionField . ' IN (' . implode(', ', $keys) . ')';
 
 			// Get all fields from the MM table
 		$fields = $GLOBALS['TYPO3_DB']->admin_get_fields($this->providerData['mm']);
