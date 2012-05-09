@@ -234,6 +234,13 @@ class Tx_Mmprovider_Services_Provider extends tx_tesseract_providerbase {
 				// by the values returned from the database
 			} else {
 				$selectionKeys = array_keys($databaseResult);
+				$this->getController()->addMessage(
+					'mmprovider',
+					sprintf('The MM selection returned %d keys', count($selectionKeys)),
+					'Selected keys',
+					t3lib_FlashMessage::OK,
+					$selectionKeys
+				);
 			}
 		}
 		return $selectionKeys;
