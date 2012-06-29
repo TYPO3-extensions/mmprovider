@@ -19,6 +19,7 @@ $TCA['tx_mmprovider_selection'] = array(
 		'enablecolumns' => array(
 			'disabled' => 'hidden',
 		),
+		'searchFields' => 'title,description',
 		'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY) . 'Configuration/TCA/MmProvider.php',
 		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY) . 'Resources/Public/Images/icon_tx_mmprovider_selection.png',
 	),
