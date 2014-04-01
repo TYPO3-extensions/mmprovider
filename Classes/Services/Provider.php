@@ -187,7 +187,14 @@ class Tx_Mmprovider_Services_Provider extends tx_tesseract_providerbase {
 		foreach ($selection as $selectionLine) {
 				// Try evaluating the line, in case of failure issue a notice
 			try {
-				$selectionKeys[] = intval(tx_expressions_parser::evaluateExpression($selectionLine));
+				$selectionValue = tx_expressions_parser::evaluateExpression($selectionLine);
+				$values = explode(',', $selectionValue);
+				foreach ($values as $aValue) {
+					$finalValue = intval($aValue);
+					if ($finalValue > 0) {
+						$selectionKeys[] = $finalValue;
+					}
+				}
 			}
 			catch (Exception $e) {
 				$this->getController()->addMessage(
